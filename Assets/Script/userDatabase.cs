@@ -14,8 +14,7 @@ public class userDatabase : MonoBehaviour
     IDbConnection dbconn;
     IDbCommand dbcmd;
     private IDataReader reader;
-    public InputField t_id, score;
-    public Text data_staff;
+
     public int[] highScore = new int[10];
     public int[] perform = new int[4];
     public int lagu;
