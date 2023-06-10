@@ -591,7 +591,6 @@ GameObject:
   m_Component:
   - component: {fileID: 205715615}
   - component: {fileID: 205715616}
-  - component: {fileID: 205715617}
   m_Layer: 5
   m_Name: ScrollContent
   m_TagString: Untagged
@@ -637,26 +636,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 205715614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50440431d89f6124288e9d8b73c04a1c, type: 3}
+  m_Script: {fileID: 11500000, guid: 95e5f1b600f870d44b988f2ab6e64ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemSpacing: 30
+  itemSpacing: 20
   horizontalMargin: 0
-  verticalMargin: 30
+  verticalMargin: 20
   horizontal: 0
   vertical: 1
---- !u!114 &205715617
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 205715614}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: edf1d5cee088a6c4b9471cf9f8d0788c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &222800068
 GameObject:
   m_ObjectHideFlags: 0
@@ -793,7 +780,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 39175136cc2408f468e30aafeb99f3d6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: dc79c88eb5a45ba45bffc51d6da5978d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1597,7 +1584,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 557920906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62d9d5277f9dd14ea66c9317e324e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d88600c8584beb498ddb92da8d9458c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRectTransform: {fileID: 557920907}
@@ -2982,7 +2969,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1100284292}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62d9d5277f9dd14ea66c9317e324e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d88600c8584beb498ddb92da8d9458c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRectTransform: {fileID: 1100284293}
@@ -3561,7 +3548,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1229286458}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62d9d5277f9dd14ea66c9317e324e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d88600c8584beb498ddb92da8d9458c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRectTransform: {fileID: 1229286459}
@@ -3944,7 +3931,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1310394731}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2584ca881f0ee68489be8877d4d3c580, type: 3}
+  m_Script: {fileID: 11500000, guid: ed4395ee3645970469f95fc988e9fbd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scrollContent: {fileID: 205715616}
@@ -3962,8 +3949,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Content: {fileID: 205715615}
-  m_Horizontal: 1
-  m_Vertical: 0
+  m_Horizontal: 0
+  m_Vertical: 1
   m_MovementType: 0
   m_Elasticity: 0.1
   m_Inertia: 1
@@ -4093,7 +4080,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1312971597}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62d9d5277f9dd14ea66c9317e324e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d88600c8584beb498ddb92da8d9458c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRectTransform: {fileID: 1312971598}
@@ -4373,7 +4360,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1326338421}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62d9d5277f9dd14ea66c9317e324e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d88600c8584beb498ddb92da8d9458c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRectTransform: {fileID: 1326338422}
@@ -4878,7 +4865,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1488306240}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62d9d5277f9dd14ea66c9317e324e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d88600c8584beb498ddb92da8d9458c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRectTransform: {fileID: 1488306241}
@@ -5079,7 +5066,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1493723092}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62d9d5277f9dd14ea66c9317e324e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d88600c8584beb498ddb92da8d9458c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRectTransform: {fileID: 1493723093}
@@ -5598,7 +5585,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1573339670}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62d9d5277f9dd14ea66c9317e324e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d88600c8584beb498ddb92da8d9458c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRectTransform: {fileID: 1573339671}
@@ -5953,7 +5940,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1664261184}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62d9d5277f9dd14ea66c9317e324e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d88600c8584beb498ddb92da8d9458c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRectTransform: {fileID: 1664261185}
@@ -6550,7 +6537,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2000605304}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e62d9d5277f9dd14ea66c9317e324e28, type: 3}
+  m_Script: {fileID: 11500000, guid: 1d88600c8584beb498ddb92da8d9458c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   buttonRectTransform: {fileID: 2000605305}
