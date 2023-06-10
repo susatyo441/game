@@ -380,7 +380,7 @@ public void cek()
     }
 
     //Default Value performance
-    public void defaultPeform()
+    public void defaultPerform()
     {
         using (dbconn = new SqliteConnection(conn))
         {

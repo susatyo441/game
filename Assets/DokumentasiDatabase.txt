@@ -1,0 +1,45 @@
+file /asset/script/userDatabase.cs
+class userDatabase :
+
+ada 3 table
+
+1. table user :
+| id | highScore |   (id = urutan lagu, misal id 1 = whistle blackpink high scorenya 0)
+|  1 |     0     |
+|  2 |     0     |
+|  3 |     0     |   (jika game baru pertama dibuka maka highscorenya 0 semua dan sudah ada 10 id secara default)
+|  4 |     0     |   
+|  5 |     0     |   (jika ingin mengakses salah satu highscore akseslah dengan array public int[] highScore = new int[10];)
+|  6 |     0     |   (contoh cara akses nilai highscore bisa dilihat di file /asset/script/tes.cs)
+|  7 |     0     |
+|  8 |     0     |   (jika ingin mengupdate nilai highscore bisa menggunakan fungsi updateHighScore(int song, int skor);)
+|  9 |     0     |   (contoh: updateHighScore(2, 9000); // ini mengupdate lagu 2 dengan highscore 9000)
+| 10 |     0     |
+
+2. table lagu :
+| id | lagu |
+|  1 |   1  |
+
+- table ini hanya mempunyai 1 id
+- table ini berguna untuk menetapkan value kolom lagu berdasarkan urutan lagu yang dipilih dari button di halaman select song
+contoh : player memilih lagu whistle blackpink di halaman select song -> nilai kolom lagu menjadi 9 -> halaman gameplay menerima value 9 dan langsung memutar lagu whistle blackpink
+- fungsi untuk mengupdate table user : updateSong(int song);
+- variable untuk mengakses nilai lagu : public int lagu;
+- seluruh contoh sudah ada di /asset/script/tes.cs
+
+3. table performance
+| id | bad | poor | good | great |
+|  1 |  0  |   0  |   0  |    0  |
+
+- table ini hanya mempunyai 1 id
+- nilai default bad = 0, poor = 0, good = 0, great = 0;
+- table ini berguna untuk menetapkan performa player dan memperlihatkannya sesudah selesai bermain
+- fungsi untuk mengupdate table performance : updatePerform(int[4] perform);
+- fungsi untuk mengubah table performance menjadi nilai default yaitu nilainya 0 semua : defaultPerform(); //berguna saat memulai game yang baru
+- variable untuk mengakses nilai performance : public int[] perform = new int[4];
+urutan tiap array :
+perform[0] = bad
+perform[1] = poor
+perform[2] = good
+perform[3] = great
+- seluruh contoh sudah ada di /asset/script/tes.cs

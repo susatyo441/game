@@ -776,9 +776,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1098122361}
-        m_TargetAssemblyTypeName: userDatabase, Assembly-CSharp
-        m_MethodName: defaultPeform
+      - m_Target: {fileID: 1098122360}
+        m_TargetAssemblyTypeName: tes, Assembly-CSharp
+        m_MethodName: defaultPerformance
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1325,9 +1325,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a56bf4b7e972e4f9be276ec95b674c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  t_id: {fileID: 0}
-  score: {fileID: 0}
-  data_staff: {fileID: 0}
   highScore: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
   perform: 00000000000000000000000000000000
   lagu: 0
