@@ -17,7 +17,8 @@ public class SongManager : MonoBehaviour
     [SerializeField] private float spawnDelay = 0.5f;
     [SerializeField] private int bpm;
     [SerializeField] private FFTWindow fftwindow;
-    
+    [SerializeField] public bool isCollide;
+    GameObject spwn;
     private float[] samples = new float[1024];
     private void Start()
     {
@@ -27,7 +28,6 @@ public class SongManager : MonoBehaviour
         //ukur waktu when music start play
         dspTime = (float)AudioSettings.dspTime;
         //start song
-        //audio = GetComponent<AudioSource>();
         //audio.Play();
         //timeSpawn = songPositionInSec;
         AudioProcessor proc = FindAnyObjectByType<AudioProcessor>();
@@ -39,6 +39,8 @@ public class SongManager : MonoBehaviour
     private void Update()
     {
 
+        
+
         //AudioListener.GetSpectrumData(samples, 0, fftwindow);
         //Debug.Log("Samples : " + samples[bpm]);
         //if(samples[bpm] > spawnDelay)
@@ -49,9 +51,6 @@ public class SongManager : MonoBehaviour
 
         //}
 
-
-
-
         //posisi lagu detik keberapa
         //songPositionInSec = (float)(AudioSettings.dspTime - dspTime);
         //songPositionInBit = songPositionInSec / secPerBeat;
@@ -60,7 +59,7 @@ public class SongManager : MonoBehaviour
         //Debug.Log("Beat  ke : " + songPositionInBit);
 
         //SpawnNot();
-        
+
     }
 
     void BeatMapping()
@@ -80,8 +79,9 @@ public class SongManager : MonoBehaviour
     {
         Debug.Log("Beat terdeteksi");
         var rnd = new Random();
-        float a = rnd.Next(0, posSpwn.Length);
-        GameObject spwn = Instantiate(notSpawn, new Vector3(a, notPostion.transform.position.y, notPostion.transform.position.z), Quaternion.identity);
+        int a = rnd.Next(0, posSpwn.Length);
+        Debug.Log("nilai a : " + a);
+        spwn = Instantiate(notSpawn, new Vector3(posSpwn[a], notPostion.transform.position.y, notPostion.transform.position.z), Quaternion.identity);
         spwn.AddComponent<MoveAfterSpawn>();
         spwn.GetComponent<MoveAfterSpawn>().tempo = tempo;
          
@@ -96,4 +96,7 @@ public class SongManager : MonoBehaviour
             Debug.DrawLine(start, end);
         }
     }
+
+  
+
 }
