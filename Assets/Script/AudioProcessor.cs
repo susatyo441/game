@@ -23,6 +23,10 @@ public class AudioProcessor : MonoBehaviour
 {
 	public AudioSource audioSource;
 
+	public AudioClip Lagu1, Lagu2, Lagu3, Lagu4, Lagu5, Lagu6, Lagu7, Lagu8, Lagu9, Lagu10;
+	public int lagu;
+	public userDatabase udb;
+
 	private long lastT, nowT, diff, entries, sum;
 
 	public int bufferSize = 1024;
@@ -98,6 +102,50 @@ public class AudioProcessor : MonoBehaviour
 		initArrays ();
 
 		audioSource = GetComponent<AudioSource> ();
+		udb.awalan();
+		lagu = udb.getLagu();
+		if(lagu == 1)
+        {
+			audioSource.clip = Lagu1;
+		}else if(lagu == 2)
+        {
+			audioSource.clip = Lagu2;
+		}
+		else if (lagu == 3)
+		{
+			audioSource.clip = Lagu3;
+		}
+		else if (lagu == 4)
+		{
+			audioSource.clip = Lagu4;
+		}
+		else if (lagu == 5)
+		{
+			audioSource.clip = Lagu5;
+		}
+		else if (lagu == 6)
+		{
+			audioSource.clip = Lagu6;
+		}
+		else if (lagu == 7)
+		{
+			audioSource.clip = Lagu7;
+		}
+		else if (lagu == 8)
+		{
+			audioSource.clip = Lagu8;
+		}
+		else if (lagu == 9)
+		{
+			audioSource.clip = Lagu9;
+		}
+		else if (lagu == 10)
+		{
+			audioSource.clip = Lagu10;
+		}
+
+
+		audioSource.Play();
 		samplingRate = audioSource.clip.frequency;
 
 		framePeriod = (float)bufferSize / (float)samplingRate;
@@ -140,6 +188,7 @@ public class AudioProcessor : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		lagu = udb.getLagu();
 		if (audioSource.isPlaying) {
 			audioSource.GetSpectrumData (spectrum, 0, FFTWindow.BlackmanHarris);
 			computeAverages (spectrum);

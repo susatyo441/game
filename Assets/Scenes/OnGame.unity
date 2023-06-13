@@ -15658,6 +15658,7 @@ GameObject:
   - component: {fileID: 1386744961}
   - component: {fileID: 1386744960}
   - component: {fileID: 1386744962}
+  - component: {fileID: 1386744963}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -15753,7 +15754,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 18f70d216c8e2ec46905678bea63fb68, type: 3}
+  m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -15852,6 +15853,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audioSource: {fileID: 1386744961}
+  Lagu1: {fileID: 8300000, guid: cecef696bf6b7234aa9c461b0ce5ec4c, type: 3}
+  Lagu2: {fileID: 8300000, guid: 80526608525095f49bd2dc061f2e07e7, type: 3}
+  Lagu3: {fileID: 8300000, guid: 43ece5c5add90784f9d7e69c2da0acb1, type: 3}
+  Lagu4: {fileID: 8300000, guid: ad85f8ec919561d4d9afdf8b526f3e7d, type: 3}
+  Lagu5: {fileID: 8300000, guid: 18f70d216c8e2ec46905678bea63fb68, type: 3}
+  Lagu6: {fileID: 8300000, guid: 4990723d513b2ce4f9a9b259d07a1c18, type: 3}
+  Lagu7: {fileID: 8300000, guid: 953e351b9dfa02e47b0cdcd2c376fa3d, type: 3}
+  Lagu8: {fileID: 8300000, guid: 59c82ebd30c02e44983993d913571a11, type: 3}
+  Lagu9: {fileID: 8300000, guid: 5a9c103996988c34892cb7a238f8f43f, type: 3}
+  Lagu10: {fileID: 8300000, guid: 4ca9a803111538943a113994d9899c0b, type: 3}
+  lagu: 0
+  udb: {fileID: 1386744963}
   bufferSize: 1024
   gThresh: 0.1
   onBeat:
@@ -15860,6 +15873,21 @@ MonoBehaviour:
   onSpectrum:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1386744963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1386744956}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a56bf4b7e972e4f9be276ec95b674c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScore: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  perform: 00000000000000000000000000000000
+  lagu: 0
 --- !u!1 &1493832105
 GameObject:
   m_ObjectHideFlags: 0
