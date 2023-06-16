@@ -37,24 +37,17 @@ public class NoteManager : MonoBehaviour
             }
         }else if (!Input.GetKeyDown(KeyCode.D))
         {
-<<<<<<< Updated upstream
-            vfx_whenPressed1.Stop();
-            vfx_whenPressed2.Stop();
-=======
+
          //  vfx_whenPressed1.Stop();
           //  vfx_whenPressed2.Stop();
->>>>>>> Stashed changes
+
 
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
-<<<<<<< Updated upstream
-            vfx_whenPressed11.Play();
-            vfx_whenPressed21.Play();
-=======
            //vfx_whenPressed11.Play();
             //vfx_whenPressed21.Play();
->>>>>>> Stashed changes
+
 
             if (isCollide1)
             {
@@ -63,24 +56,15 @@ public class NoteManager : MonoBehaviour
         }
         else if (!Input.GetKeyDown(KeyCode.F))
         {
-<<<<<<< Updated upstream
-            vfx_whenPressed11.Stop();
-            vfx_whenPressed21.Stop();
-=======
            //vfx_whenPressed11.Stop();
             //vfx_whenPressed21.Stop();
->>>>>>> Stashed changes
 
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
-<<<<<<< Updated upstream
-            vfx_whenPressed12.Play();
-            vfx_whenPressed22.Play();
-=======
           //vfx_whenPressed12.Play();
            // vfx_whenPressed22.Play();
->>>>>>> Stashed changes
+
 
             if (isCollide2)
             { 
@@ -89,24 +73,14 @@ public class NoteManager : MonoBehaviour
         }
         else if (!Input.GetKeyDown(KeyCode.J))
         {
-<<<<<<< Updated upstream
-            vfx_whenPressed12.Stop();
-            vfx_whenPressed22.Stop();
-=======
            //vfx_whenPressed12.Stop();
             //vfx_whenPressed22.Stop();
->>>>>>> Stashed changes
 
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
-<<<<<<< Updated upstream
-            vfx_whenPressed13.Play();
-            vfx_whenPressed23.Play();
-=======
            //vfx_whenPressed13.Play();
             //vfx_whenPressed23.Play();
->>>>>>> Stashed changes
 
             if (isCollide3)
             {

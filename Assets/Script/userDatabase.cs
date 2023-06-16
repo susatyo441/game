@@ -97,6 +97,82 @@ public class userDatabase : MonoBehaviour
         cek2();
         
     }
+
+    public void awalan()
+    {
+        //Application database Path android
+        string filepath = Application.persistentDataPath + "/" + DatabaseName;
+        if (!File.Exists(filepath))
+        {
+            // If not found on android will create Tables and database
+
+            Debug.LogWarning("File \"" + filepath + "\" does not exist. Attempting to create from \"" +
+                             Application.dataPath + "!/assets/user");
+
+
+
+            // UNITY_ANDROID
+            WWW loadDB = new WWW("jar:file://" + Application.dataPath + "!/assets/user.db");
+            while (!loadDB.isDone) { }
+            // then save to Application.persistentDataPath
+            File.WriteAllBytes(filepath, loadDB.bytes);
+
+
+
+
+        }
+
+
+        conn = "URI=file:" + filepath;
+
+        Debug.Log("Stablishing connection to: " + conn);
+        dbconn = new SqliteConnection(conn);
+        dbconn.Open();
+
+        string query;
+        query = "CREATE TABLE user (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, highScore INTEGER DEFAULT 0 NULL); ";
+        try
+        {
+            dbcmd = dbconn.CreateCommand(); // create empty command
+            dbcmd.CommandText = query; // fill the command
+            reader = dbcmd.ExecuteReader(); // execute command which returns a reader
+        }
+        catch (Exception e)
+        {
+
+            Debug.Log(e);
+
+        }
+        query = "CREATE TABLE lagu (id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, lagu INTEGER DEFAULT 1 NULL);";
+        try
+        {
+            dbcmd = dbconn.CreateCommand(); // create empty command
+            dbcmd.CommandText = query; // fill the command
+            reader = dbcmd.ExecuteReader(); // execute command which returns a reader
+        }
+        catch (Exception e)
+        {
+
+            Debug.Log(e);
+
+        }
+        query = "CREATE TABLE performance (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, bad INTEGER DEFAULT 0, poor  INTEGER DEFAULT 0, good INTEGER DEFAULT 0, great INTEGER DEFAULT 0); ";
+        try
+        {
+            dbcmd = dbconn.CreateCommand(); // create empty command
+            dbcmd.CommandText = query; // fill the command
+            reader = dbcmd.ExecuteReader(); // execute command which returns a reader
+        }
+        catch (Exception e)
+        {
+
+            Debug.Log(e);
+
+        }
+        cek();
+        cek1();
+        cek2();
+    }
 public void cek()
 {
         int score = 0;
@@ -469,6 +545,10 @@ public void cek()
         cek();
         cek1();
         cek2();
+    }
+    public int getLagu()
+    {
+        return lagu;
     }
 
     /*   //Search on Database by ID

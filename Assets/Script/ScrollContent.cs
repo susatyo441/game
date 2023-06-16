@@ -1,4 +1,7 @@
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
+using System.Collections;
 
 public class ScrollContent : MonoBehaviour
 {
@@ -56,7 +59,7 @@ public class ScrollContent : MonoBehaviour
     /// <summary>
     /// The RectTransform component of the scroll content.
     /// </summary>
-    private RectTransform rectTransform;
+    private RectTransform rectTransform, scrollPanel, selectedRect;
 
     /// <summary>
     /// The RectTransform components of all the children of this GameObject.
@@ -90,12 +93,14 @@ public class ScrollContent : MonoBehaviour
     /// </summary>
     [SerializeField]
     private bool horizontal, vertical;
-
+    private GameObject lastSelected;
     #endregion
 
     private void Start()
     {
         rectTransform = GetComponent<RectTransform>();
+        //scrollPanel = GetComponent<ScrollRect>().content;
+
         rtChildren = new RectTransform[rectTransform.childCount];
 
         for (int i = 0; i < rectTransform.childCount; i++)
@@ -119,6 +124,42 @@ public class ScrollContent : MonoBehaviour
             InitializeContentHorizontal();
     }
 
+    private void Update()
+    {
+        //GameObject selected = EventSystem.current.currentSelectedGameObject;
+        //Debug.Log("Selected : " + selected.name);
+        //if(selected == null)
+        //{
+        //    return;
+        //}
+        //if(selected.transform.parent != scrollPanel.transform)
+        //{
+        //    return;
+        //}
+        //if(selected == lastSelected)
+        //{
+        //    return;
+        //}
+
+        //selectedRect = selected.GetComponent<RectTransform>();
+        //float selectedPosy = Mathf.Abs(selectedRect.anchoredPosition.y) + selectedRect.rect.height;
+        //float viwMinY = scrollPanel.anchoredPosition.y;
+        //float viewMaxY = scrollPanel.anchoredPosition.y + rectTransform.rect.height;
+
+        //if(selectedPosy > viwMinY)
+        //{
+        //    float newy = selectedPosy - rectTransform.rect.height;
+        //    scrollPanel.anchoredPosition = new Vector2(scrollPanel.anchoredPosition.x, newy);
+        //}
+        //else if(Mathf.Abs(selectedRect.anchoredPosition.y) < viwMinY)
+        //{
+        //    scrollPanel.anchoredPosition = new Vector2(scrollPanel.anchoredPosition.x, Mathf.Abs(selectedRect.anchoredPosition.y));
+
+        //}
+        //lastSelected = selected;
+      
+    }
+
     /// <summary>
     /// Initializes the scroll content if the scroll view is oriented horizontally.
     /// </summary>
@@ -134,14 +175,16 @@ public class ScrollContent : MonoBehaviour
         }
     }
 
-    /// <summary>
+    
     /// Initializes the scroll content if the scroll view is oriented vertically.
-    /// </summary>
+  
     private void InitializeContentVertical()
     {
         float originY = 0 - (height * 0.5f);
         float posOffset = childHeight * 0.5f;
-        for (int i = 0; i < rtChildren.Length; i++)
+        int i = 0;
+        
+        for (i = 0; i < rtChildren.Length; i++)
         {
             Vector2 childPos = rtChildren[i].localPosition;
             childPos.y = originY + posOffset + i * (childHeight + itemSpacing);
