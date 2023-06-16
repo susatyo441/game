@@ -8,14 +8,15 @@ public class NoteManager : MonoBehaviour
     bool isCollide1;
     bool isCollide2;
     bool isCollide3;
-    [SerializeField] ParticleSystem vfx_whenPressed1;
-    [SerializeField] ParticleSystem vfx_whenPressed2;
-    [SerializeField] ParticleSystem vfx_whenPressed11;
-    [SerializeField] ParticleSystem vfx_whenPressed21;
-    [SerializeField] ParticleSystem vfx_whenPressed12;
-    [SerializeField] ParticleSystem vfx_whenPressed22;
-    [SerializeField] ParticleSystem vfx_whenPressed13;
-    [SerializeField] ParticleSystem vfx_whenPressed23;
+    //[SerializeField] ParticleSystem vfx_whenPressed1;
+    //[SerializeField] ParticleSystem vfx_whenPressed2;
+    //[SerializeField] ParticleSystem vfx_whenPressed11;
+    //[SerializeField] ParticleSystem vfx_whenPressed21;
+    //[SerializeField] ParticleSystem vfx_whenPressed12;
+    //[SerializeField] ParticleSystem vfx_whenPressed22;
+    //[SerializeField] ParticleSystem vfx_whenPressed13;
+    //[SerializeField] ParticleSystem vfx_whenPressed23;
+    //GameObject obj;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +28,8 @@ public class NoteManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D))
         {
-            vfx_whenPressed1.Play();
-            vfx_whenPressed2.Play();
+      //      vfx_whenPressed1.Play();
+       //     vfx_whenPressed2.Play();
 
             if (isCollide)
             {
@@ -36,14 +37,24 @@ public class NoteManager : MonoBehaviour
             }
         }else if (!Input.GetKeyDown(KeyCode.D))
         {
+<<<<<<< Updated upstream
             vfx_whenPressed1.Stop();
             vfx_whenPressed2.Stop();
+=======
+         //  vfx_whenPressed1.Stop();
+          //  vfx_whenPressed2.Stop();
+>>>>>>> Stashed changes
 
         }
         if (Input.GetKeyDown(KeyCode.F))
         {
+<<<<<<< Updated upstream
             vfx_whenPressed11.Play();
             vfx_whenPressed21.Play();
+=======
+           //vfx_whenPressed11.Play();
+            //vfx_whenPressed21.Play();
+>>>>>>> Stashed changes
 
             if (isCollide1)
             {
@@ -52,30 +63,50 @@ public class NoteManager : MonoBehaviour
         }
         else if (!Input.GetKeyDown(KeyCode.F))
         {
+<<<<<<< Updated upstream
             vfx_whenPressed11.Stop();
             vfx_whenPressed21.Stop();
+=======
+           //vfx_whenPressed11.Stop();
+            //vfx_whenPressed21.Stop();
+>>>>>>> Stashed changes
 
         }
         if (Input.GetKeyDown(KeyCode.J))
         {
+<<<<<<< Updated upstream
             vfx_whenPressed12.Play();
             vfx_whenPressed22.Play();
+=======
+          //vfx_whenPressed12.Play();
+           // vfx_whenPressed22.Play();
+>>>>>>> Stashed changes
 
             if (isCollide2)
-            {
+            { 
                 gameObject.SetActive(false);
             }
         }
         else if (!Input.GetKeyDown(KeyCode.J))
         {
+<<<<<<< Updated upstream
             vfx_whenPressed12.Stop();
             vfx_whenPressed22.Stop();
+=======
+           //vfx_whenPressed12.Stop();
+            //vfx_whenPressed22.Stop();
+>>>>>>> Stashed changes
 
         }
         if (Input.GetKeyDown(KeyCode.K))
         {
+<<<<<<< Updated upstream
             vfx_whenPressed13.Play();
             vfx_whenPressed23.Play();
+=======
+           //vfx_whenPressed13.Play();
+            //vfx_whenPressed23.Play();
+>>>>>>> Stashed changes
 
             if (isCollide3)
             {
@@ -84,8 +115,8 @@ public class NoteManager : MonoBehaviour
         }
         else if (!Input.GetKeyDown(KeyCode.K))
         {
-            vfx_whenPressed13.Stop();
-            vfx_whenPressed23.Stop();
+            //vfx_whenPressed13.Stop();
+            //vfx_whenPressed23.Stop();
 
         }
 

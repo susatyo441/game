@@ -10,6 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6877515785635592102}
   - component: {fileID: 5988599595280517392}
+  - component: {fileID: 7543921023960742505}
+  - component: {fileID: -1000147237695759911}
   m_Layer: 0
   m_Name: not_prefab
   m_TagString: Untagged
@@ -38,7 +40,7 @@ SpriteRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2052123353902883009}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -82,3 +84,36 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7543921023960742505
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052123353902883009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f8aeca30a2c0eab4fb1bf87848a1efef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assignedTime: 0
+--- !u!114 &-1000147237695759911
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2052123353902883009}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 829c487068154dd4eb711a2a2465c1d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  vfx_whenPressed1: {fileID: 0}
+  vfx_whenPressed2: {fileID: 0}
+  vfx_whenPressed11: {fileID: 0}
+  vfx_whenPressed21: {fileID: 0}
+  vfx_whenPressed12: {fileID: 0}
+  vfx_whenPressed22: {fileID: 0}
+  vfx_whenPressed13: {fileID: 0}
+  vfx_whenPressed23: {fileID: 0}
