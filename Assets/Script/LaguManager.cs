@@ -21,6 +21,9 @@ public class LaguManager : MonoBehaviour
     public string fileLocation;
     public float noteTime;
     public float noteSpawnY;
+    public AudioClip Lagu1, Lagu2, Lagu3, Lagu4, Lagu5, Lagu6, Lagu7, Lagu8, Lagu9, Lagu10;
+    public int lagu;
+    public userDatabase udb;
     public float noteTapY;
     public float noteDespawnY
     {
@@ -35,6 +38,59 @@ public class LaguManager : MonoBehaviour
     void Start()
     {
         Instance = this;
+        audioSource = GetComponent<AudioSource>();
+        udb.awalan();
+        lagu = udb.getLagu();
+        if (lagu == 1)
+        {
+            audioSource.clip = Lagu1;
+            fileLocation = "raya.mid";
+        }
+        else if (lagu == 2)
+        {
+            audioSource.clip = Lagu2;
+            fileLocation = "Polines.mid";
+        }
+        else if (lagu == 3)
+        {
+            audioSource.clip = Lagu3;
+            fileLocation = "Pupus.mid";
+        }
+        else if (lagu == 4)
+        {
+            audioSource.clip = Lagu4;
+            fileLocation = "moshimo.mid";
+        }
+        else if (lagu == 5)
+        {
+            audioSource.clip = Lagu5;
+            fileLocation = "summer.mid";
+        }
+        else if (lagu == 6)
+        {
+            audioSource.clip = Lagu6;
+            fileLocation = "whistlerevisi.mid";
+        }
+        else if (lagu == 7)
+        {
+            audioSource.clip = Lagu7;
+            fileLocation = "heaven.mid";
+        }
+        else if (lagu == 8)
+        {
+            audioSource.clip = Lagu8;
+            fileLocation = "TheNameOf.mid";
+        }
+        else if (lagu == 9)
+        {
+            audioSource.clip = Lagu9;
+            fileLocation = "Apuse.mid";
+        }
+        else if (lagu == 10)
+        {
+            audioSource.clip = Lagu10;
+            fileLocation = "Tokecang.mid";
+        }
         if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
         {
             StartCoroutine(ReadFromWebsite());
@@ -57,6 +113,7 @@ public class LaguManager : MonoBehaviour
             }
             else
             {
+                Debug.Log(UnityWebRequest.Get(Application.streamingAssetsPath + "/" + fileLocation));
                 byte[] results = www.downloadHandler.data;
                 using (var stream = new MemoryStream(results))
                 {
