@@ -44,12 +44,12 @@ public class LaguManager : MonoBehaviour
         if (lagu == 1)
         {
             audioSource.clip = Lagu1;
-            fileLocation = "raya.mid";
+            fileLocation = "Indonesia raya.mid";
         }
         else if (lagu == 2)
         {
             audioSource.clip = Lagu2;
-            fileLocation = "Polines.mid";
+            fileLocation = "Hymne Polines.mid";
         }
         else if (lagu == 3)
         {
@@ -64,7 +64,7 @@ public class LaguManager : MonoBehaviour
         else if (lagu == 5)
         {
             audioSource.clip = Lagu5;
-            fileLocation = "summer.mid";
+            fileLocation = "Gomene summer.mid";
         }
         else if (lagu == 6)
         {
@@ -74,12 +74,12 @@ public class LaguManager : MonoBehaviour
         else if (lagu == 7)
         {
             audioSource.clip = Lagu7;
-            fileLocation = "heaven.mid";
+            fileLocation = "A little peace of heaven.mid";
         }
         else if (lagu == 8)
         {
             audioSource.clip = Lagu8;
-            fileLocation = "TheNameOf.mid";
+            fileLocation = "Killing In The Name Of.mid";
         }
         else if (lagu == 9)
         {
