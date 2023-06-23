@@ -55,7 +55,7 @@ public class Lane : MonoBehaviour
             {
                 if (Math.Abs(audioTime - timeStamp) < marginOfError)
                 {
-                    Hit();
+                  //  Hit();
                     print($"Hit on {inputIndex} note");
                     Destroy(notes[inputIndex].gameObject);
                     inputIndex++;
@@ -67,19 +67,19 @@ public class Lane : MonoBehaviour
             }
             if (timeStamp + marginOfError <= audioTime)
             {
-                Miss();
+               // Miss();
                 print($"Missed {inputIndex} note");
                 inputIndex++;
             }
         }
 
     }
-    private void Hit()
-    {
-        ScoreManager.Hit();
-    }
-    private void Miss()
-    {
-        ScoreManager.Miss();
-    }
+    //private void Hit()
+    //{
+    //    ScoreManager.HitGreat();
+    //}
+    //private void Miss()
+    //{
+    //    ScoreManager.HitBad();
+    //}
 }
