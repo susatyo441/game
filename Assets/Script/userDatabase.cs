@@ -395,7 +395,7 @@ public void cek()
             {
                 // idreaders = reader.GetString(1);
                 highScore[i] = reader.GetInt32(1);
-                Debug.Log("high score = " + highScore[i]);
+                /*Debug.Log("high score = " + highScore[i]);*/
                 i++;
             }
             reader.Close();
@@ -424,7 +424,7 @@ public void cek()
                 // idreaders = reader.GetString(1);
                 lagu = reader.GetInt32(1);
                 //data_staff.text += " score =" + score + "pecah balon=" + pecah_balon + " maze =" + maze + "hanoi=" + hanoi + "\n";
-                Debug.Log("lagu =" + lagu);
+                /*Debug.Log("lagu =" + lagu);*/
             }
             reader.Close();
             reader = null;

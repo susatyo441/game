@@ -37,6 +37,7 @@ public class Note : MonoBehaviour
 
                 if (isCollide)
                 {
+                    JudgmentScore();
                     gameObject.SetActive(false);
                 }
             }
@@ -58,6 +59,7 @@ public class Note : MonoBehaviour
 
                 if (isCollide1)
                 {
+                    JudgmentScore();
                     gameObject.SetActive(false);
                 }
             }
@@ -76,6 +78,7 @@ public class Note : MonoBehaviour
 
                 if (isCollide2)
                 {
+                    JudgmentScore();
                     gameObject.SetActive(false);
                 }
             }
@@ -90,10 +93,9 @@ public class Note : MonoBehaviour
             {
                 //vfx_whenPressed13.Play();
                 //vfx_whenPressed23.Play();
-
-
                 if (isCollide3)
                 {
+                    JudgmentScore();
                     gameObject.SetActive(false);
                 }
             }
@@ -111,25 +113,25 @@ public class Note : MonoBehaviour
         if (collision.tag == "box")
         {
             isCollide = true;
-            Debug.Log("Kena Collider1 kih");
+            /*Debug.Log("Kena Collider1 kih");*/
 
         }
         if (collision.tag == "box1")
         {
             isCollide1 = true;
-            Debug.Log("Kena Collider2 kih");
+            /*Debug.Log("Kena Collider2 kih");*/
 
         }
         if (collision.tag == "box2")
         {
             isCollide2 = true;
-            Debug.Log("Kena Collider3 kih");
+            /*Debug.Log("Kena Collider3 kih");*/
 
         }
         if (collision.tag == "box3")
         {
             isCollide3 = true;
-            Debug.Log("Kena Collider4 kih");
+            /*Debug.Log("Kena Collider4 kih");*/
 
         }
     }
@@ -139,28 +141,58 @@ public class Note : MonoBehaviour
         if (collision.tag == "box")
         {
             isCollide = false;
-            Debug.Log("Metu Collider kih");
+            /*Debug.Log("Metu Collider kih");*/
 
         }
         if (collision.tag == "box1")
         {
             isCollide1 = false;
-            Debug.Log("Metu Collider kih");
+            /*Debug.Log("Metu Collider kih");*/
 
         }
         if (collision.tag == "box2")
         {
             isCollide2 = false;
-            Debug.Log("Metu Collider kih");
+            /*Debug.Log("Metu Collider kih");*/
 
         }
         if (collision.tag == "box3")
         {
             isCollide3 = false;
-            Debug.Log("Metu Collider kih");
+            /*Debug.Log("Metu Collider kih");*/
 
         }
     }
 
-
+    private void JudgmentScore()
+    {
+        if (transform.position.y >= -2.84)
+        {
+            Debug.Log("Bad");
+        }
+        else if (transform.position.y >= -2.85 || transform.position.y <= -3.36)
+        {
+            Debug.Log("Poor");
+        }
+        else if (transform.position.y >= -3.37 || transform.position.y <= -3.70)
+        {
+            Debug.Log("Normal");
+        }
+        else if (transform.position.y >= -3.71 || transform.position.y <= -3.80)
+        {
+            Debug.Log("Perfect");
+        }
+        else if (transform.position.y >= -3.81 || transform.position.y <= -4.11)
+        {
+            Debug.Log("Normal");
+        }
+        else if (transform.position.y >= -4.12 || transform.position.y <= -4.63)
+        {
+            Debug.Log("Poor");
+        }
+        else if (transform.position.y <= -4.64)
+        {
+            Debug.Log("Bad");
+        }
+    }
 }

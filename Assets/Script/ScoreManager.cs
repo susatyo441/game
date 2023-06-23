@@ -17,12 +17,12 @@ public class ScoreManager : MonoBehaviour
     public static void Hit()
     {
         comboScore += 1;
-        Instance.hitSFX.Play();
+        /*Instance.hitSFX.Play();*/
     }
     public static void Miss()
     {
         comboScore = 0;
-        Instance.missSFX.Play();
+        /*Instance.missSFX.Play();*/
     }
     private void Update()
     {
