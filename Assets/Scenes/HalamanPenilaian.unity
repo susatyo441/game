@@ -1033,6 +1033,8 @@ GameObject:
   - component: {fileID: 1084929447}
   - component: {fileID: 1084929446}
   - component: {fileID: 1084929445}
+  - component: {fileID: 1084929450}
+  - component: {fileID: 1084929449}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1128,6 +1130,48 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1084929449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084929444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5244f1d516abc34e9f6ae1ce300d4d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1047829337}
+  udb: {fileID: 1084929450}
+  perform1: 00000000000000000000000000000000
+  song: 0
+  skor: 0
+  skor1: 0
+  total: 0
+  persentase: 0
+  bad: {fileID: 774667961}
+  poor: {fileID: 1918055213}
+  good: {fileID: 542324384}
+  great: {fileID: 1875976596}
+  combo: {fileID: 1682489889}
+  persen: {fileID: 1518720383}
+  highSkor: {fileID: 1556798127}
+--- !u!114 &1084929450
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1084929444}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69a56bf4b7e972e4f9be276ec95b674c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  highScore: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  perform: 00000000000000000000000000000000
+  lagu: 0
 --- !u!1 &1170094052
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OnGame.unity
     guid: 84b1ac119d4f26a4da41ae31b35cc000
+  - enabled: 1
+    path: Assets/Scenes/HalamanPenilaian.unity
+    guid: e3d97dd8bb09b47d49bbcceba5b3f21b
   m_configObjects: {}

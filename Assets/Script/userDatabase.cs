@@ -313,11 +313,23 @@ public void cek()
     }*/
 
     //Insert To Database
+    public void insert_1()
+    {
+        using (dbconn = new SqliteConnection(conn))
+        {
+            dbconn.Open(); //Open connection to the database.
+            dbcmd = dbconn.CreateCommand();
+            sqlQuery = "insert into user default values";// table name
+            dbcmd.CommandText = sqlQuery;
+            dbcmd.ExecuteScalar();
+            dbconn.Close();
+        }
+    }
     private void insert_function()
     {
         using (dbconn = new SqliteConnection(conn))
         {
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 2; i++)
             {
                 dbconn.Open(); //Open connection to the database.
                 dbcmd = dbconn.CreateCommand();
