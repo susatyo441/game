@@ -10529,7 +10529,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRestriction: 11
   input: 100
-  notePrefab: {fileID: 2052123353902883009, guid: 3f0cf85fae04d9c448078075c9f8aeeb, type: 3}
+  notePrefab: {fileID: 4073502290301643486, guid: 26a3cf4888234eb4dbe4ed13ca3df7bf, type: 3}
   timeStamps: []
 --- !u!4 &868362547
 Transform:
@@ -10539,7 +10539,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 868362545}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.54, y: 2.58, z: -3}
+  m_LocalPosition: {x: -2.41, y: 5.72, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10709,7 +10709,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRestriction: 7
   input: 106
-  notePrefab: {fileID: 2052123353902883009, guid: 3f0cf85fae04d9c448078075c9f8aeeb, type: 3}
+  notePrefab: {fileID: 7984277494847648383, guid: d4188d204cc658742af6317350f61cd5, type: 3}
   timeStamps: []
 --- !u!4 &1080388814
 Transform:
@@ -10719,7 +10719,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1080388812}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3, y: 2.08, z: -3}
+  m_LocalPosition: {x: 0.79, y: 5.72, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -10962,7 +10962,7 @@ MonoBehaviour:
   songDelayInSeconds: 0
   marginOfError: 0.07
   inputDelayInMilliseconds: 0
-  fileLocation: whistlerevisi.mid
+  fileLocation: Indonesia raya.mid
   noteTime: 1
   noteSpawnY: 8
   Lagu1: {fileID: 8300000, guid: cecef696bf6b7234aa9c461b0ce5ec4c, type: 3}
@@ -11023,7 +11023,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRestriction: 5
   input: 107
-  notePrefab: {fileID: 2052123353902883009, guid: 3f0cf85fae04d9c448078075c9f8aeeb, type: 3}
+  notePrefab: {fileID: 5848740150117346605, guid: 35edf1e255eb2704a8ee7db19e940be3, type: 3}
   timeStamps: []
 --- !u!4 &1248486867
 Transform:
@@ -11033,7 +11033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1248486865}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.04, y: 2.38, z: -3}
+  m_LocalPosition: {x: 2.33, y: 5.72, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -15874,7 +15874,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRestriction: 9
   input: 102
-  notePrefab: {fileID: 2052123353902883009, guid: 3f0cf85fae04d9c448078075c9f8aeeb, type: 3}
+  notePrefab: {fileID: 8002117406869722706, guid: cfe6c570587ed4f4bb80c1c6abd512a7, type: 3}
   timeStamps: []
 --- !u!4 &1294782144
 Transform:
@@ -15884,7 +15884,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1294782142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.03, y: 2.26, z: -3}
+  m_LocalPosition: {x: -0.75, y: 5.72, z: -3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

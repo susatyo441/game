@@ -30,6 +30,79 @@ public class Note : MonoBehaviour
         {
             transform.localPosition = Vector3.Lerp(Vector3.up * LaguManager.Instance.noteSpawnY, Vector3.up * LaguManager.Instance.noteDespawnY, t);
             GetComponent<SpriteRenderer>().enabled = true;
+            if (Input.GetKeyDown(KeyCode.D))
+            {
+                //vfx_whenPressed1.Play();
+                //vfx_whenPressed2.Play();
+
+                if (isCollide)
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+            else if (!Input.GetKeyDown(KeyCode.D))
+            {
+
+                //  vfx_whenPressed1.Stop();
+                //  vfx_whenPressed2.Stop();
+
+
+
+            }
+            if (Input.GetKeyDown(KeyCode.F))
+            {
+                //vfx_whenPressed11.Play();
+                //vfx_whenPressed21.Play();
+
+
+
+                if (isCollide1)
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+            else if (!Input.GetKeyDown(KeyCode.F))
+            {
+                //vfx_whenPressed11.Stop();
+                //vfx_whenPressed21.Stop();
+
+
+            }
+            if (Input.GetKeyDown(KeyCode.J))
+            {
+                //vfx_whenPressed12.Play();
+                // vfx_whenPressed22.Play();
+
+
+                if (isCollide2)
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+            else if (!Input.GetKeyDown(KeyCode.J))
+            {
+                //vfx_whenPressed12.Stop();
+                //vfx_whenPressed22.Stop();
+
+
+            }
+            if (Input.GetKeyDown(KeyCode.K))
+            {
+                //vfx_whenPressed13.Play();
+                //vfx_whenPressed23.Play();
+
+
+                if (isCollide3)
+                {
+                    gameObject.SetActive(false);
+                }
+            }
+            else if (!Input.GetKeyDown(KeyCode.K))
+            {
+                //vfx_whenPressed13.Stop();
+                //vfx_whenPressed23.Stop();
+
+            }
         }
     }
 
@@ -88,4 +161,6 @@ public class Note : MonoBehaviour
 
         }
     }
+
+
 }
