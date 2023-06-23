@@ -6,6 +6,7 @@ using Melanchall.DryWetMidi.Interaction;
 using System.IO;
 using UnityEngine.Networking;
 using System;
+using UnityEngine.SceneManagement;
 
 public class LaguManager : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class LaguManager : MonoBehaviour
     public Lane[] lanes;
     public float songDelayInSeconds;
     public double marginOfError; // in seconds
-
+    public int max = 0;
     public int inputDelayInMilliseconds;
 
 
@@ -23,6 +24,7 @@ public class LaguManager : MonoBehaviour
     public float noteSpawnY;
     public AudioClip Lagu1, Lagu2, Lagu3, Lagu4, Lagu5, Lagu6, Lagu7, Lagu8, Lagu9, Lagu10;
     public int lagu;
+    public int[] perform = new int[4];
     public userDatabase udb;
     public float noteTapY;
     public float noteDespawnY
@@ -37,6 +39,7 @@ public class LaguManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        max = 0;
         Instance = this;
         audioSource = GetComponent<AudioSource>();
         udb.awalan();
@@ -91,6 +94,7 @@ public class LaguManager : MonoBehaviour
             audioSource.clip = Lagu10;
             fileLocation = "Tokecang.mid";
         }
+
         if (Application.streamingAssetsPath.StartsWith("http://") || Application.streamingAssetsPath.StartsWith("https://"))
         {
             StartCoroutine(ReadFromWebsite());
@@ -147,9 +151,41 @@ public class LaguManager : MonoBehaviour
     {
         return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
     }
-
+    public void checkkk()
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            udb.awalan();
+            if (udb.i < 13)
+            {
+                udb.insert_1();
+            }
+        }
+    }
     void Update()
     {
+        perform[0] = ScoreManager.bad;
+        perform[1] = ScoreManager.poor;
+        perform[2] = ScoreManager.good;
+        perform[3] = ScoreManager.great;
+        if (!audioSource.isPlaying)
+        {
+            foreach (var lane in lanes)
+            {
+                max += lane.timeStamps.Count;
+            }
+            checkkk();
+            perform[0] = ScoreManager.bad;
+            perform[1] = ScoreManager.poor;
+            perform[2] = ScoreManager.good;
+            perform[3] = ScoreManager.great;
+            udb.updatePerform(perform);
 
+            udb.updateHighScore(11, ScoreManager.Score);
+            udb.updateHighScore(12, ScoreManager.maxcombo);
+            udb.updateHighScore(13, max);
+            SceneManager.LoadScene("HalamanPenilaian");
+                
+        }
     }
 }

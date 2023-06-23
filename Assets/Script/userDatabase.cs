@@ -14,8 +14,9 @@ public class userDatabase : MonoBehaviour
     IDbConnection dbconn;
     IDbCommand dbcmd;
     private IDataReader reader;
+    public int i;
 
-    public int[] highScore = new int[10];
+    public int[] highScore = new int[13];
     public int[] perform = new int[4];
     public int lagu;
 
@@ -173,35 +174,36 @@ public class userDatabase : MonoBehaviour
         cek1();
         cek2();
     }
-public void cek()
-{
+    public void cek()
+    {
         int score = 0;
         using (dbconn = new SqliteConnection(conn))
-    {
-        dbconn.Open(); //Open connection to the database.
-        IDbCommand dbcmd = dbconn.CreateCommand();
-        string sqlQuery = "SELECT * " + "FROM user where id = 1";// table name
-        dbcmd.CommandText = sqlQuery;
-        IDataReader reader = dbcmd.ExecuteReader();
-        while (reader.Read())
         {
-                score = reader.GetInt32(0);
-        }
-    reader.Close();
-    reader = null;
-    dbcmd.Dispose();
-    dbcmd = null;
-    dbconn.Close();
+                dbconn.Open(); //Open connection to the database.
+                IDbCommand dbcmd = dbconn.CreateCommand();
+                string sqlQuery = "SELECT * " + "FROM user where id = 1";// table name
+                dbcmd.CommandText = sqlQuery;
+                IDataReader reader = dbcmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    score = reader.GetInt32(0);
+                }
+                reader.Close();
+                reader = null;
+                dbcmd.Dispose();
+                dbcmd = null;
+                dbconn.Close();
+            }
+            if (score == 0)
+            {
+                insert_function();
+            }
+            else
+            {
+                reader_function();
+            }
+
     }
-        if(score == 0)
-        {
-            insert_function();
-        }
-        else
-        {
-            reader_function();
-        }
-}
 
     public void cek1()
     {
@@ -385,7 +387,7 @@ public void cek()
         // int idreaders ;
         using (dbconn = new SqliteConnection(conn))
         {
-            int i = 0;
+             i = 0;
             dbconn.Open(); //Open connection to the database.
             IDbCommand dbcmd = dbconn.CreateCommand();
             string sqlQuery = "SELECT * " + "FROM user";// table name

@@ -10961,6 +10961,7 @@ MonoBehaviour:
   - {fileID: 1248486866}
   songDelayInSeconds: 0
   marginOfError: 0.07
+  max: 0
   inputDelayInMilliseconds: 0
   fileLocation: Indonesia raya.mid
   noteTime: 1
@@ -10976,6 +10977,7 @@ MonoBehaviour:
   Lagu9: {fileID: 8300000, guid: 5a9c103996988c34892cb7a238f8f43f, type: 3}
   Lagu10: {fileID: 8300000, guid: 4ca9a803111538943a113994d9899c0b, type: 3}
   lagu: 0
+  perform: 00000000000000000000000000000000
   udb: {fileID: 1386744963}
   noteTapY: -4.27
 --- !u!4 &1207353819
@@ -16213,7 +16215,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a56bf4b7e972e4f9be276ec95b674c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  highScore: 00000000000000000000000000000000000000000000000000000000000000000000000000000000
+  highScore: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   perform: 00000000000000000000000000000000
   lagu: 0
 --- !u!1 &1493832105

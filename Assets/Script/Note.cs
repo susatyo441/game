@@ -10,8 +10,10 @@ public class Note : MonoBehaviour
     bool isCollide3;
     double timeInstantiated;
     public float assignedTime;
+    public ScoreManager sm;
     void Start()
     {
+        sm = new ScoreManager();
         timeInstantiated = LaguManager.GetAudioSourceTime();
     }
 
@@ -166,33 +168,58 @@ public class Note : MonoBehaviour
 
     private void JudgmentScore()
     {
-        if (transform.position.y >= -2.84)
+        if (transform.position.y >= -2.84f)
         {
+            Miss();
             Debug.Log("Bad");
         }
-        else if (transform.position.y >= -2.85 || transform.position.y <= -3.36)
+        else if (transform.position.y >= -2.85f || transform.position.y <= -3.36f)
         {
+            HitPoor();
             Debug.Log("Poor");
         }
-        else if (transform.position.y >= -3.37 || transform.position.y <= -3.70)
+        else if (transform.position.y >= -3.37f || transform.position.y <= -3.70f)
         {
+            HitGood();
             Debug.Log("Normal");
         }
-        else if (transform.position.y >= -3.71 || transform.position.y <= -3.80)
+        else if (transform.position.y >= -3.71f || transform.position.y <= -3.80f)
         {
+            HitPerfect();
             Debug.Log("Perfect");
         }
-        else if (transform.position.y >= -3.81 || transform.position.y <= -4.11)
+        else if (transform.position.y >= -3.81f || transform.position.y <= -4.11f)
         {
+            HitGood();
             Debug.Log("Normal");
         }
-        else if (transform.position.y >= -4.12 || transform.position.y <= -4.63)
+        else if (transform.position.y >= -4.12f || transform.position.y <= -4.63f)
         {
+            HitPoor();
             Debug.Log("Poor");
         }
-        else if (transform.position.y <= -4.64)
+        else if (transform.position.y <= -4.64f)
         {
+
+            Miss();
             Debug.Log("Bad");
         }
+    }
+
+    private void HitGood()
+    {
+        ScoreManager.HitGood();
+    }
+    private void HitPoor()
+    {
+        ScoreManager.HitPoor();
+    }
+    private void HitPerfect()
+    {
+        ScoreManager.HitGreat();
+    }
+    private void Miss()
+    {
+        ScoreManager.HitBad();
     }
 }
