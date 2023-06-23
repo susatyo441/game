@@ -1,31 +1,46 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
-    public AudioSource hitSFX;
-    public AudioSource missSFX;
-    public TMPro.TextMeshPro scoreText;
-    static int comboScore;
+    public Text scoreText;
+    //public AudioSource hitSFX;
+    //public AudioSource missSFX;
+    public static int Score;
     void Start()
     {
         Instance = this;
-        comboScore = 0;
+        Score = 0;
     }
-    public static void Hit()
+    public static void HitGood()
     {
-        comboScore += 1;
+        Score += 5;
+        
         /*Instance.hitSFX.Play();*/
     }
-    public static void Miss()
+    public static void HitGreat()
     {
-        comboScore = 0;
+        Score += 10;
+        
+        /*Instance.hitSFX.Play();*/
+    }
+    public static void HitPoor()
+    {
+        Score += 2;
+        
+        /*Instance.hitSFX.Play();*/
+    }
+    public static void HitBad()
+    {
+        Score += 0;
+        
         /*Instance.missSFX.Play();*/
     }
     private void Update()
     {
-        scoreText.text = comboScore.ToString();
+        scoreText.text = Score.ToString();
     }
 }
