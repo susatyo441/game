@@ -22,7 +22,7 @@ public class ScoreManager : MonoBehaviour
         good = 0;
         great = 0;
         combo = 0;
-        health = 15;
+        health = 30;
     }
     public static void HitGood()
     {

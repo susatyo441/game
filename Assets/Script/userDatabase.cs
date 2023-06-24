@@ -331,7 +331,7 @@ public class userDatabase : MonoBehaviour
     {
         using (dbconn = new SqliteConnection(conn))
         {
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 13; i++)
             {
                 dbconn.Open(); //Open connection to the database.
                 dbcmd = dbconn.CreateCommand();
