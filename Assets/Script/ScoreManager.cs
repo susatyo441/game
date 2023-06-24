@@ -7,11 +7,11 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
     public Text scoreText;
-    public userDatabase udb;
     //public AudioSource hitSFX;
     //public AudioSource missSFX;
     public static int Score;
     public static int bad, poor, good, great, combo, maxcombo;
+    public static int health = 30;
     void Start()
     {
         Instance = this;
@@ -22,6 +22,7 @@ public class ScoreManager : MonoBehaviour
         good = 0;
         great = 0;
         combo = 0;
+        health = 15;
     }
     public static void HitGood()
     {
@@ -55,6 +56,7 @@ public class ScoreManager : MonoBehaviour
         Score += 0;
         bad++;
         combo = 0;
+        health--;
         /*Instance.missSFX.Play();*/
     }
     private void Update()

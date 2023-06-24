@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using System.IO;
 using UnityEngine.Networking;
 using System;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class LaguManager : MonoBehaviour
 {
     public static LaguManager Instance;
@@ -17,7 +18,8 @@ public class LaguManager : MonoBehaviour
     public double marginOfError; // in seconds
     public int max = 0;
     public int inputDelayInMilliseconds;
-
+    public TextMeshProUGUI kombo;
+    public Text skoor;
 
     public string fileLocation;
     public float noteTime;
@@ -164,6 +166,8 @@ public class LaguManager : MonoBehaviour
     }
     void Update()
     {
+        skoor.text = ScoreManager.Score.ToString();
+        kombo.text = ScoreManager.combo.ToString();
         perform[0] = ScoreManager.bad;
         perform[1] = ScoreManager.poor;
         perform[2] = ScoreManager.good;
@@ -186,6 +190,10 @@ public class LaguManager : MonoBehaviour
             udb.updateHighScore(13, max);
             SceneManager.LoadScene("HalamanPenilaian");
                 
+        }
+        if(ScoreManager.health <= 0)
+        {
+            audioSource.Stop();
         }
     }
 }

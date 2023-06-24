@@ -168,41 +168,41 @@ public class Note : MonoBehaviour
 
     private void JudgmentScore()
     {
-        if (transform.position.y >= -2.84f)
+        if (transform.position.y >= -2.80f)
         {
             Miss();
-            Debug.Log("Bad");
+            Debug.Log("Bad" + transform.position.y);
         }
-        else if (transform.position.y >= -2.85f || transform.position.y <= -3.36f)
+        if (transform.position.y <= -2.81f && transform.position.y >= -3.00f)
         {
             HitPoor();
-            Debug.Log("Poor");
+            Debug.Log("Poor" + transform.position.y);
         }
-        else if (transform.position.y >= -3.37f || transform.position.y <= -3.70f)
+        else if (transform.position.y <= -3.01f && transform.position.y >= -3.30f)
         {
             HitGood();
-            Debug.Log("Normal");
+            Debug.Log("Normal" + transform.position.y);
         }
-        else if (transform.position.y >= -3.71f || transform.position.y <= -3.80f)
+        else if (transform.position.y <= -3.31f && transform.position.y >= -3.80f)
         {
             HitPerfect();
-            Debug.Log("Perfect");
+            Debug.Log("Perfect" + transform.position.y);
         }
-        else if (transform.position.y >= -3.81f || transform.position.y <= -4.11f)
+        else if (transform.position.y <= -3.81f && transform.position.y >= -4.10f)
         {
             HitGood();
-            Debug.Log("Normal");
+            Debug.Log("Normal" + transform.position.y);
         }
-        else if (transform.position.y >= -4.12f || transform.position.y <= -4.63f)
+        else if (transform.position.y <= -4.11f && transform.position.y >= -4.60f)
         {
             HitPoor();
-            Debug.Log("Poor");
+            Debug.Log("Poor" + transform.position.y);
         }
-        else if (transform.position.y <= -4.64f)
+        else if (transform.position.y <= -4.61f)
         {
 
             Miss();
-            Debug.Log("Bad");
+            Debug.Log("Bad" + transform.position.y);
         }
     }
 
