@@ -84,7 +84,7 @@ public class LaguManager : MonoBehaviour
         else if (lagu == 8)
         {
             audioSource.clip = Lagu8;
-            fileLocation = "Killing In The Name Of.mid";
+            fileLocation = "Killing.mid";
         }
         else if (lagu == 9)
         {
