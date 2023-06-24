@@ -37,6 +37,7 @@ public class Note : MonoBehaviour
                 //vfx_whenPressed1.Play();
                 //vfx_whenPressed2.Play();
 
+                /*JudgementScoreOutside();*/
                 if (isCollide)
                 {
                     JudgmentScore();
@@ -58,7 +59,7 @@ public class Note : MonoBehaviour
                 //vfx_whenPressed21.Play();
 
 
-
+                /*JudgementScoreOutside();*/
                 if (isCollide1)
                 {
                     JudgmentScore();
@@ -77,7 +78,7 @@ public class Note : MonoBehaviour
                 //vfx_whenPressed12.Play();
                 // vfx_whenPressed22.Play();
 
-
+                /*JudgementScoreOutside();*/
                 if (isCollide2)
                 {
                     JudgmentScore();
@@ -95,6 +96,8 @@ public class Note : MonoBehaviour
             {
                 //vfx_whenPressed13.Play();
                 //vfx_whenPressed23.Play();
+
+                /*JudgementScoreOutside();*/
                 if (isCollide3)
                 {
                     JudgmentScore();
@@ -168,42 +171,53 @@ public class Note : MonoBehaviour
 
     private void JudgmentScore()
     {
-        if (transform.position.y >= -2.84f)
+        if (transform.position.y >= -2.80f)
         {
             Miss();
-            Debug.Log("Bad");
+            Debug.Log("Bad" + transform.position.y);
         }
-        else if (transform.position.y >= -2.85f  || transform.position.y <= -3.36f )
+        if (transform.position.y <= -2.81f && transform.position.y >= -3.00f)
         {
             HitPoor();
-            Debug.Log("Poor");
-        }
-        else if (transform.position.y >= -3.37f  || transform.position.y <= -3.70f)
+            Debug.Log("Poor" + transform.position.y);
+        else if (transform.position.y <= -3.01f && transform.position.y >= -3.30f)
         {
             HitGood();
-            Debug.Log("Normal");
+            Debug.Log("Normal" + transform.position.y);
         }
-        else if (transform.position.y >= -3.71f  || transform.position.y <= -3.80f)
+        else if (transform.position.y <= -3.31f && transform.position.y >= -3.80f)
         {
             HitPerfect();
-            Debug.Log("Perfect");
+            Debug.Log("Perfect" + transform.position.y);
         }
-        else if (transform.position.y >= -3.81f  || transform.position.y <= -4.11f )
+        else if (transform.position.y <= -3.81f && transform.position.y >= -4.10f)
         {
             HitGood();
-            Debug.Log("Normal");
+            Debug.Log("Normal" + transform.position.y);
         }
-        else if (transform.position.y >= -4.12f  || transform.position.y <= -4.63f )
+        else if (transform.position.y <= -4.11f && transform.position.y >= -4.60f)
         {
             HitPoor();
-            Debug.Log("Poor");
+            Debug.Log("Poor" + transform.position.y);
         }
-        else if (transform.position.y <= -4.64f )
+        else if (transform.position.y <= -4.61f)
         {
 
             Miss();
-            Debug.Log("Bad");
+            Debug.Log("Bad" + transform.position.y);
         }
+    }
+
+    private void JudgementScoreOutside()
+    {
+        if (transform.localPosition.y <= 5.72f && transform.localPosition.y >= -2.84f)
+        {
+            Debug.Log("Bad" + transform.localPosition.y);
+        }
+        /*else if (transform.position.y <= -4.64f && transform.position.y >= -5f)
+        {
+            Debug.Log("Bad");
+        }*/
     }
 
     private void HitGood()

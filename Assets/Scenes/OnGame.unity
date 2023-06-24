@@ -10273,9 +10273,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48b0b3bd4500ee942aba6e8647a13f82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitSFX: {fileID: 0}
-  missSFX: {fileID: 0}
   scoreText: {fileID: 0}
+  udb: {fileID: 0}
 --- !u!4 &820515372
 Transform:
   m_ObjectHideFlags: 0
@@ -16215,6 +16214,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69a56bf4b7e972e4f9be276ec95b674c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  i: 0
   highScore: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   perform: 00000000000000000000000000000000
   lagu: 0
