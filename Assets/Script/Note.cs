@@ -32,7 +32,7 @@ public class Note : MonoBehaviour
         {
             transform.localPosition = Vector3.Lerp(Vector3.up * LaguManager.Instance.noteSpawnY, Vector3.up * LaguManager.Instance.noteDespawnY, t);
             GetComponent<SpriteRenderer>().enabled = true;
-            if (Input.GetKeyDown(KeyCode.D))
+          /*  if (Input.GetKeyDown(KeyCode.D))
             {
                 //vfx_whenPressed1.Play();
                 //vfx_whenPressed2.Play();
@@ -106,34 +106,34 @@ public class Note : MonoBehaviour
                 //vfx_whenPressed13.Stop();
                 //vfx_whenPressed23.Stop();
 
-            }
+            }*/
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "box")
         {
             isCollide = true;
-            /*Debug.Log("Kena Collider1 kih");*/
+            *//*Debug.Log("Kena Collider1 kih");*//*
 
         }
         if (collision.tag == "box1")
         {
             isCollide1 = true;
-            /*Debug.Log("Kena Collider2 kih");*/
+            *//*Debug.Log("Kena Collider2 kih");*//*
 
         }
         if (collision.tag == "box2")
         {
             isCollide2 = true;
-            /*Debug.Log("Kena Collider3 kih");*/
+            *//*Debug.Log("Kena Collider3 kih");*//*
 
         }
         if (collision.tag == "box3")
         {
             isCollide3 = true;
-            /*Debug.Log("Kena Collider4 kih");*/
+            *//*Debug.Log("Kena Collider4 kih");*//*
 
         }
     }
@@ -143,25 +143,25 @@ public class Note : MonoBehaviour
         if (collision.tag == "box")
         {
             isCollide = false;
-            /*Debug.Log("Metu Collider kih");*/
+            *//*Debug.Log("Metu Collider kih");*//*
 
         }
         if (collision.tag == "box1")
         {
             isCollide1 = false;
-            /*Debug.Log("Metu Collider kih");*/
+            *//*Debug.Log("Metu Collider kih");*//*
 
         }
         if (collision.tag == "box2")
         {
             isCollide2 = false;
-            /*Debug.Log("Metu Collider kih");*/
+            *//*Debug.Log("Metu Collider kih");*//*
 
         }
         if (collision.tag == "box3")
         {
             isCollide3 = false;
-            /*Debug.Log("Metu Collider kih");*/
+            *//*Debug.Log("Metu Collider kih");*//*
 
         }
     }
@@ -221,5 +221,5 @@ public class Note : MonoBehaviour
     private void Miss()
     {
         ScoreManager.HitBad();
-    }
+    }*/
 }

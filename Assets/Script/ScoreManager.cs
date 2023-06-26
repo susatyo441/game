@@ -12,6 +12,7 @@ public class ScoreManager : MonoBehaviour
     public static int Score;
     public static int bad, poor, good, great, combo, maxcombo;
     public static int health = 30;
+    
     void Start()
     {
         Instance = this;
@@ -23,6 +24,7 @@ public class ScoreManager : MonoBehaviour
         great = 0;
         combo = 0;
         health = 30;
+        
     }
     public static void HitGood()
     {
