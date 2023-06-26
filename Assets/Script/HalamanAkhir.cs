@@ -32,7 +32,7 @@ public class HalamanAkhir : MonoBehaviour
         persentase = persentase / total * 100;
 
         persen.text = persentase.ToString("0") + "%";
-        if (persentase < 30)
+        if (persentase < 40)
         {
             animator.SetBool("sedih", true);
         }
