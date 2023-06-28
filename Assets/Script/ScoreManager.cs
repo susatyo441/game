@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
-    public Text scoreText;
     //public AudioSource hitSFX;
     //public AudioSource missSFX;
     public static int Score;
     public static int bad, poor, good, great, combo, maxcombo;
     public static int health = 30;
+    public static int kali = 1;
     
     void Start()
     {
@@ -24,31 +24,69 @@ public class ScoreManager : MonoBehaviour
         great = 0;
         combo = 0;
         health = 30;
+        kali = 1;
         
     }
     public static void HitGood()
     {
-        Score += 5;
-        good++;
         combo++;
+        if (combo >= 20 && combo < 40)
+        {
+            kali = 2;
+        }
+        else if (combo >= 40)
+        {
+            kali = 4;
+        }
+        else
+        {
+            kali = 1;
+        }
+        Score += 5 * kali;
+        good++;
         if (combo > maxcombo)
             maxcombo = combo;
         /*Instance.hitSFX.Play();*/
     }
     public static void HitGreat()
     {
-        Score += 10;
-        great++;
         combo++;
+        if (combo >= 20 && combo < 40)
+        {
+            kali = 2;
+        }
+        else if (combo >= 40)
+        {
+            kali = 4;
+        }
+        else
+        {
+            kali = 1;
+        }
+        Score += 10 * kali;
+        great++;
         if (combo > maxcombo)
             maxcombo = combo;
         /*Instance.hitSFX.Play();*/
     }
     public static void HitPoor()
     {
-        Score += 2;
-        poor++;
         combo++;
+        if (combo >= 20 && combo < 40)
+        {
+            kali = 2;
+        }
+        else if (combo >= 40)
+        {
+            kali = 4;
+        }
+        else
+        {
+            kali = 1;
+        }
+        Score += 2 * kali;
+        poor++;
+        
         if (combo > maxcombo)
             maxcombo = combo;
         /*Instance.hitSFX.Play();*/
@@ -61,8 +99,9 @@ public class ScoreManager : MonoBehaviour
         health--;
         /*Instance.missSFX.Play();*/
     }
-    private void Update()
+    void Update()
     {
-        scoreText.text = Score.ToString();
+        
+
     }
 }

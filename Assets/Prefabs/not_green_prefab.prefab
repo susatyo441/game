@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assignedTime: 0
+  sm: {fileID: 0}
 --- !u!50 &8919431649091866893
 Rigidbody2D:
   serializedVersion: 4

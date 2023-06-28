@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-
+using UnityEngine.SceneManagement;
 public class HalamanAkhir : MonoBehaviour
 {
     public Animator animator;
@@ -13,6 +13,7 @@ public class HalamanAkhir : MonoBehaviour
     public double persentase;
     public TextMeshProUGUI bad, poor, good, great, combo, persen;
     public Text highSkor;
+    public GameObject fail, pass;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,10 +36,14 @@ public class HalamanAkhir : MonoBehaviour
         if (persentase < 40)
         {
             animator.SetBool("sedih", true);
+            fail.SetActive(true);
+            pass.SetActive(false);
         }
         else
         {
             animator.SetBool("sedih", false);
+            fail.SetActive(false);
+            pass.SetActive(true);
         }
         skor = udb.highScore[song-1];
         combo.text = udb.highScore[11].ToString();
@@ -62,5 +67,9 @@ public class HalamanAkhir : MonoBehaviour
     public void updateScore(int soong, int skorrr)
     {
         udb.updateHighScore(soong, skorrr);         //UPDATE HIGH SCORE
+    }
+    public void goBack()
+    {
+        SceneManager.LoadScene("Select Song 1");         //UPDATE HIGH SCORE
     }
 }

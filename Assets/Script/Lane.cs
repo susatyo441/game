@@ -8,10 +8,10 @@ public class Lane : MonoBehaviour
 {
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
     public KeyCode input;
-    public GameObject notePrefab;
+    public GameObject notePrefab, bad, poor, good, great;
     public List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
-
+    [SerializeField] private AudioClip hitSound, missSound;
     public int spawnIndex = 0;
     public int inputIndex = 0;
 
@@ -36,7 +36,7 @@ public class Lane : MonoBehaviour
     void Update()
     {
         
-        if (spawnIndex < timeStamps.Count)
+        if (spawnIndex <= timeStamps.Count)
         {
             if (LaguManager.GetAudioSourceTime() >= timeStamps[spawnIndex] - LaguManager.Instance.noteTime)
             {
@@ -49,63 +49,93 @@ public class Lane : MonoBehaviour
 
         if (inputIndex <= timeStamps.Count)
         {
-            double timeStamp = timeStamps[inputIndex];
+            /*double timeStamp = timeStamps[inputIndex];
             double marginOfError = LaguManager.Instance.marginOfError;
-            double audioTime = LaguManager.GetAudioSourceTime() - (LaguManager.Instance.inputDelayInMilliseconds / 1000.0);
+            double audioTime = LaguManager.GetAudioSourceTime() - (LaguManager.Instance.inputDelayInMilliseconds / 1000.0);*/
             /*Debug.Log(audioTime);*/
        
                 if (Input.GetKeyDown(input))
                 {
                     if (notes[inputIndex].gameObject.transform.position.y >= -1f)
                     {
-                        /*print($"Hit on {inputIndex} note");*/
-                        Destroy(notes[inputIndex].gameObject);
-                    Debug.Log("Bad" + notes[inputIndex].gameObject.transform.position.y);
+                    LaguManager.Instance.PlaySound(hitSound);
+                    /*print($"Hit on {inputIndex} note");*/
+                    bad.SetActive(true);
+                    poor.SetActive(false);
+                    good.SetActive(false);
+                    great.SetActive(false);
+                    Destroy(notes[inputIndex].gameObject);
+                    /*Debug.Log("Bad" + notes[inputIndex].gameObject.transform.position.y);*/
                     ScoreManager.HitBad();
                     inputIndex++;
                         
                 }
                     if (notes[inputIndex].gameObject.transform.position.y <= -1.01f && notes[inputIndex].gameObject.transform.position.y >= -3.00f)
                     {
-                        /*print($"Hit on {inputIndex} note");*/
-                        Destroy(notes[inputIndex].gameObject);
-                    Debug.Log("Poor" + notes[inputIndex].gameObject.transform.position.y);
+                    LaguManager.Instance.PlaySound(hitSound);
+                    /*print($"Hit on {inputIndex} note");*/
+                    bad.SetActive(false);
+                    poor.SetActive(true);
+                    good.SetActive(false);
+                    great.SetActive(false);
+                    Destroy(notes[inputIndex].gameObject);
+                    /*Debug.Log("Poor" + notes[inputIndex].gameObject.transform.position.y);*/
                     ScoreManager.HitPoor();
                     inputIndex++;
                         
                 }
                     else if (notes[inputIndex].gameObject.transform.position.y <= -3.01f && notes[inputIndex].gameObject.transform.position.y >= -3.30f)
                     {
-                        /*print($"Hit on {inputIndex} note");*/
-                        Destroy(notes[inputIndex].gameObject);
-                    Debug.Log("Normal" + notes[inputIndex].gameObject.transform.position.y);
+                    LaguManager.Instance.PlaySound(hitSound);
+                    /*print($"Hit on {inputIndex} note");*/
+                    bad.SetActive(false);
+                    poor.SetActive(false);
+                    good.SetActive(true);
+                    great.SetActive(false);
+                    Destroy(notes[inputIndex].gameObject);
+                   /* Debug.Log("Normal" + notes[inputIndex].gameObject.transform.position.y);*/
                     ScoreManager.HitGood();
                     inputIndex++;
                        
                 }
-                    else if (notes[inputIndex].gameObject.transform.position.y <= -3.31f && notes[inputIndex].gameObject.transform.position.y >= -3.80f)
+                    else if (notes[inputIndex].gameObject.transform.position.y <= -3.31f && notes[inputIndex].gameObject.transform.position.y >= -3.89f)
                     {
-                        /*print($"Hit on {inputIndex} note");*/
-                        Destroy(notes[inputIndex].gameObject);
-                    Debug.Log("Perfect" + notes[inputIndex].gameObject.transform.position.y);
+                    LaguManager.Instance.PlaySound(hitSound);
+                    /*print($"Hit on {inputIndex} note");*/
+                    bad.SetActive(false);
+                    poor.SetActive(false);
+                    good.SetActive(false);
+                    great.SetActive(true);
+                    Destroy(notes[inputIndex].gameObject);
+                   /* Debug.Log("Perfect" + notes[inputIndex].gameObject.transform.position.y);*/
                     ScoreManager.HitGreat();
                     inputIndex++;
                         
                 }
-                    else if (notes[inputIndex].gameObject.transform.position.y <= -3.81f && notes[inputIndex].gameObject.transform.position.y >= -4.10f)
+                    else if (notes[inputIndex].gameObject.transform.position.y <= -3.90f && notes[inputIndex].gameObject.transform.position.y >= -4.39f)
                     {
-                        /*print($"Hit on {inputIndex} note");*/
-                        Destroy(notes[inputIndex].gameObject);
-                    Debug.Log("Normal" + notes[inputIndex].gameObject.transform.position.y);
+                    LaguManager.Instance.PlaySound(hitSound);
+                    /*print($"Hit on {inputIndex} note");*/
+                    bad.SetActive(false);
+                    poor.SetActive(false);
+                    good.SetActive(true);
+                    great.SetActive(false);
+                    Destroy(notes[inputIndex].gameObject);
+                    /*Debug.Log("Normal" + notes[inputIndex].gameObject.transform.position.y);*/
                     ScoreManager.HitGood();
                     inputIndex++;
                        
                 }
-                    else if (notes[inputIndex].gameObject.transform.position.y <= -4.11f && notes[inputIndex].gameObject.transform.position.y >= -4.60f)
+                    else if (notes[inputIndex].gameObject.transform.position.y <= -4.40f && notes[inputIndex].gameObject.transform.position.y >= -5.19f)
                     {
-                        /*print($"Hit on {inputIndex} note");*/
-                        Destroy(notes[inputIndex].gameObject);
-                    Debug.Log("Poor" + notes[inputIndex].gameObject.transform.position.y);
+                    LaguManager.Instance.PlaySound(hitSound);
+                    /*print($"Hit on {inputIndex} note");*/
+                    bad.SetActive(false);
+                    poor.SetActive(true);
+                    good.SetActive(false);
+                    great.SetActive(false);
+                    Destroy(notes[inputIndex].gameObject);
+                    /*Debug.Log("Poor" + notes[inputIndex].gameObject.transform.position.y);*/
                     ScoreManager.HitPoor();
                     inputIndex++;
                         
@@ -145,7 +175,7 @@ public class Lane : MonoBehaviour
 
             /*         }*/
             /*  }*/
-            if (notes[inputIndex].gameObject.transform.position.y <= -4.61f)
+            if (notes[inputIndex].gameObject.transform.position.y <= -5.20f)
             {
                 /*if (Input.GetKeyDown(input))
                 {*/
@@ -153,7 +183,12 @@ public class Lane : MonoBehaviour
                  {*/
                 // Miss();
                 /*ScoreManager.HitBad();*/
-                print($"Missed {inputIndex} note");
+                LaguManager.Instance.PlaySound(missSound);
+                bad.SetActive(true);
+                poor.SetActive(false);
+                good.SetActive(false);
+                great.SetActive(false);
+                /*print($"Missed {inputIndex} note");*/
                 Destroy(notes[inputIndex].gameObject);
                 inputIndex++;
                 ScoreManager.HitBad();

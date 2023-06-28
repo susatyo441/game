@@ -8,19 +8,22 @@ using System.IO;
 using UnityEngine.Networking;
 using System;
 using UnityEngine.SceneManagement;
+using UnityEngine.Video;
 using TMPro;
 public class LaguManager : MonoBehaviour
 {
     public static LaguManager Instance;
     public AudioSource audioSource;
     public Lane[] lanes;
+    public UnityEngine.Video.VideoPlayer videoPlayer;
     public float songDelayInSeconds;
     public double marginOfError; // in seconds
     public int max = 0;
     public int inputDelayInMilliseconds;
     public TextMeshProUGUI kombo;
+    public GameObject duaKali, empatKali;
     public Text skoor;
-
+    public VideoClip videoClip1, videoClip2;
     public string fileLocation;
     public float noteTime;
     public float noteSpawnY;
@@ -36,12 +39,17 @@ public class LaguManager : MonoBehaviour
             return noteTapY - (noteSpawnY - noteTapY);
         }
     }
-
+    
+    public void PlaySound(AudioClip _sound)
+    {
+        audioSource.PlayOneShot(_sound);
+    }
     public static MidiFile midiFile;
     // Start is called before the first frame update
     void Start()
     {
         max = 0;
+        
         Instance = this;
         audioSource = GetComponent<AudioSource>();
         udb.awalan();
@@ -166,8 +174,28 @@ public class LaguManager : MonoBehaviour
     }
     void Update()
     {
+
+        Debug.Log(Application.dataPath);
         skoor.text = ScoreManager.Score.ToString();
         kombo.text = ScoreManager.combo.ToString();
+        if (ScoreManager.combo >= 20 && ScoreManager.combo < 40)
+        {
+            videoPlayer.clip = videoClip2;
+            duaKali.SetActive(true);
+            empatKali.SetActive(false);
+        }
+        else if(ScoreManager.combo >= 40)
+        {
+            videoPlayer.clip = videoClip2;
+            duaKali.SetActive(false);
+            empatKali.SetActive(true);
+        }
+        else
+        {
+            duaKali.SetActive(false);
+            empatKali.SetActive(false);
+            videoPlayer.clip = videoClip1;
+        }
         perform[0] = ScoreManager.bad;
         perform[1] = ScoreManager.poor;
         perform[2] = ScoreManager.good;
