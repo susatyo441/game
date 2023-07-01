@@ -4,8 +4,16 @@ using UnityEngine.SceneManagement;
 public class PressAnyKeyToChangeScene : MonoBehaviour
 {
     public string sceneName; // The name of the scene to load
-
+    public AudioSource backgroundMusic;
     private bool canChangeScene = false;
+    private void Start()
+    {
+        // Play the background music
+        if (backgroundMusic != null)
+        {
+            backgroundMusic.Play();
+        }
+    }
 
     private void Update()
     {
