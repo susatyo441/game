@@ -47,7 +47,7 @@ public class Lane : MonoBehaviour
             }
         }
 
-        if (inputIndex <= timeStamps.Count)
+        if (inputIndex < spawnIndex)
         {
             /*double timeStamp = timeStamps[inputIndex];
             double marginOfError = LaguManager.Instance.marginOfError;

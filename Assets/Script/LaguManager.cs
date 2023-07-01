@@ -13,15 +13,15 @@ using TMPro;
 public class LaguManager : MonoBehaviour
 {
     public static LaguManager Instance;
-    public AudioSource audioSource;
+    public AudioSource audioSource, audioSource1;
     public Lane[] lanes;
     public UnityEngine.Video.VideoPlayer videoPlayer;
     public float songDelayInSeconds;
     public double marginOfError; // in seconds
     public int max = 0;
     public int inputDelayInMilliseconds;
-    public TextMeshProUGUI kombo;
-    public GameObject duaKali, empatKali;
+    public TextMeshProUGUI kombo, countDown;
+    public GameObject duaKali, empatKali, panel;
     public Text skoor;
     public VideoClip videoClip1, videoClip2;
     public string fileLocation;
@@ -32,6 +32,8 @@ public class LaguManager : MonoBehaviour
     public int[] perform = new int[4];
     public userDatabase udb;
     public float noteTapY;
+    public bool pause = false, pause1 = true;
+    float current = 3;
     public float noteDespawnY
     {
         get
@@ -42,18 +44,26 @@ public class LaguManager : MonoBehaviour
     
     public void PlaySound(AudioClip _sound)
     {
-        audioSource.PlayOneShot(_sound);
+        audioSource1.PlayOneShot(_sound);
     }
     public static MidiFile midiFile;
     // Start is called before the first frame update
     void Start()
     {
+        pause = true;
+        pause1 = false;
         max = 0;
-        
         Instance = this;
         audioSource = GetComponent<AudioSource>();
         udb.awalan();
         lagu = udb.getLagu();
+        ScoreManager.bad = 0;
+        ScoreManager.poor = 0;
+        ScoreManager.good = 0;
+        ScoreManager.great = 0;
+        ScoreManager.Score = 0;
+        ScoreManager.combo = 0;
+        ScoreManager.health = 30;
         if (lagu == 1)
         {
             audioSource.clip = Lagu1;
@@ -172,9 +182,57 @@ public class LaguManager : MonoBehaviour
             }
         }
     }
+    private void Resume()
+    {
+/*        float current = 3f;*/
+        panel.SetActive(false);  
+        Time.timeScale = 1f;
+        pause = false;
+        pause1 = false;
+        audioSource.UnPause();
+    }
+    public void Resume1()
+    {
+        panel.SetActive(false);
+        Time.timeScale = 1f;
+        pause = false;
+        pause1 = false;
+        current = 3;
+    }
+    public void Exit()
+    {
+        pause = false;
+        audioSource.UnPause();
+        Time.timeScale = 1f;
+        panel.SetActive(false);
+        SceneManager.LoadScene("Select Song 1");
+    }
     void Update()
     {
-
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            countDown.enabled = false;
+            current = 0;
+            pause1 = true;
+            pause = true;
+            audioSource.Pause();
+            Time.timeScale = 0f;
+            panel.SetActive(true);
+        }
+        if (current >=-0.1 && !pause1)
+        {
+            audioSource.Pause();
+            countDown.enabled = true;
+            pause = true;
+            countDown.text = current.ToString("0");
+            current -= 1 * Time.deltaTime;
+        }
+        else if (!pause1 && current <= 0)
+        {
+            Resume();
+            countDown.enabled = false;
+        }
+       
         Debug.Log(Application.dataPath);
         skoor.text = ScoreManager.Score.ToString();
         kombo.text = ScoreManager.combo.ToString();
@@ -200,7 +258,7 @@ public class LaguManager : MonoBehaviour
         perform[1] = ScoreManager.poor;
         perform[2] = ScoreManager.good;
         perform[3] = ScoreManager.great;
-        if (!audioSource.isPlaying)
+        if (!audioSource.isPlaying && !pause)
         {
             foreach (var lane in lanes)
             {
