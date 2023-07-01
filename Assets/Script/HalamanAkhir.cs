@@ -38,6 +38,12 @@ public class HalamanAkhir : MonoBehaviour
             animator.SetBool("sedih", true);
             fail.SetActive(true);
             pass.SetActive(false);
+        }else if (persentase >= 100)
+        {
+            animator.SetBool("sedih", false);
+            fail.SetActive(false);
+            pass.SetActive(true);
+            persentase = 100;
         }
         else
         {
