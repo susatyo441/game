@@ -2191,8 +2191,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 911967186}
-        m_TargetAssemblyTypeName: QuitScene, Assembly-CSharp
+      - m_Target: {fileID: 911967189}
+        m_TargetAssemblyTypeName: ExitGame, Assembly-CSharp
         m_MethodName: Exit
         m_Mode: 1
         m_Arguments:
@@ -2493,6 +2493,7 @@ GameObject:
   - component: {fileID: 911967186}
   - component: {fileID: 911967188}
   - component: {fileID: 911967187}
+  - component: {fileID: 911967189}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2634,6 +2635,18 @@ MonoBehaviour:
   highScore: 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000
   perform: 00000000000000000000000000000000
   lagu: 0
+--- !u!114 &911967189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 911967181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7993e291fd2b15349a6337ec16ac7226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &915016536
 GameObject:
   m_ObjectHideFlags: 0
