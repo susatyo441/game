@@ -226,6 +226,10 @@ public class LaguManager : MonoBehaviour
             pause = true;
             countDown.text = current.ToString("0");
             current -= 1 * Time.deltaTime;
+            if(current <= 1)
+            {
+                countDown.text = "Start!";
+            }
         }
         else if (!pause1 && current <= 0)
         {
