@@ -32,7 +32,7 @@ public class HalamanAkhir : MonoBehaviour
         persentase = skor1;
         persentase = persentase / total * 100;
 
-        persen.text = persentase.ToString("0") + "%";
+        
         if (persentase < 40)
         {
             animator.SetBool("sedih", true);
@@ -51,6 +51,7 @@ public class HalamanAkhir : MonoBehaviour
             fail.SetActive(false);
             pass.SetActive(true);
         }
+        persen.text = persentase.ToString("0") + "%";
         skor = udb.highScore[song-1];
         combo.text = udb.highScore[11].ToString();
         highSkor.text = skor1.ToString();
